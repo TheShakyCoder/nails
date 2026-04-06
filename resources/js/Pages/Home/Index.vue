@@ -23,7 +23,7 @@ const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
     { label: 'Events', href: '#events' },
-    { label: 'News', href: '#news' },
+    { label: 'News', href: '/news-updates' },
     { label: 'Contact', href: '#contact' },
 ];
 </script>

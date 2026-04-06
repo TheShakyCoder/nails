@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\FacebookFeedController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FacebookFeedController;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return Inertia::render('Home/Index', [
@@ -11,6 +12,8 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
     ]);
 });
+
+Route::get('/news-updates', [PostController::class, 'index'])->name('posts.index');
 
 Route::get('/api/facebook-feed', [FacebookFeedController::class, 'index'])->name('facebook.feed');
 

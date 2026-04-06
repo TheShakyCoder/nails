@@ -1,4 +1,6 @@
 <script setup>
+import { Link } from '@inertiajs/vue3';
+
 const news = [
     {
         date: '1 Apr 2026',
@@ -35,13 +37,13 @@ const news = [
                         From the centre
                     </h2>
                 </div>
-                <a href="#"
+                <Link href="/news-updates"
                     class="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-brand-600 hover:text-brand-800 transition-colors">
                     All news
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
-                </a>
+                </Link>
             </div>
 
             <div class="grid md:grid-cols-3 gap-7">
