@@ -149,8 +149,8 @@ const stats = [
                     <a href="#home" class="flex items-center gap-3 shrink-0">
                         <img src="/media/logo.png" alt="WACA Logo" class="h-14 w-auto" />
                         <div class="hidden md:block">
-                            <p class="text-sm font-semibold text-brand-700 leading-tight font-display">Woodvale &amp; Ainsdale</p>
-                            <p class="text-xs text-warm-500 leading-tight">Community Centre</p>
+                            <p class="text-lg font-semibold text-brand-700 leading-tight font-display">Woodvale &amp; Ainsdale</p>
+                            <p class="text-md text-warm-500 leading-tight">Community Centre</p>
                         </div>
                     </a>
 
@@ -158,7 +158,7 @@ const stats = [
                     <div class="hidden lg:flex items-center gap-1">
                         <a v-for="link in navLinks" :key="link.label"
                            :href="link.href"
-                           class="px-4 py-2 text-sm font-medium text-warm-700 rounded-lg hover:bg-brand-50 hover:text-brand-700 transition-colors">
+                           class="px-2 py-2 text-sm font-medium text-warm-700 rounded-lg hover:bg-brand-50 hover:text-brand-700 transition-colors">
                             {{ link.label }}
                         </a>
                     </div>
@@ -166,11 +166,15 @@ const stats = [
                     <!-- CTA buttons -->
                     <div class="hidden lg:flex items-center gap-3">
                         <Link v-if="canLogin && !$page.props.auth?.user" :href="route('login')"
-                              class="px-4 py-2 text-sm font-medium text-brand-700 hover:text-brand-800 transition-colors">
-                            Staff Login
+                              class="px-2 py-2 text-sm font-medium text-brand-700 hover:text-brand-800 transition-colors">
+                            Login
+                        </Link>
+                        <Link v-if="canRegister && !$page.props.auth?.user" :href="route('register')"
+                              class="px-2 py-2 text-sm font-medium text-brand-700 hover:text-brand-800 transition-colors">
+                            Register
                         </Link>
                         <Link v-if="canLogin && $page.props.auth?.user" :href="route('dashboard')"
-                              class="px-4 py-2 text-sm font-medium text-brand-700 hover:text-brand-800 transition-colors">
+                              class="px-2 py-2 text-sm font-medium text-brand-700 hover:text-brand-800 transition-colors">
                             Dashboard
                         </Link>
                         <a href="#contact"
@@ -202,7 +206,7 @@ const stats = [
                 <div class="pt-2 border-t border-warm-100 flex flex-col gap-2">
                     <Link v-if="canLogin && !$page.props.auth?.user" :href="route('login')"
                           class="block px-4 py-2.5 text-sm font-medium text-brand-700 rounded-lg hover:bg-brand-50 transition-colors">
-                        Staff Login
+                        Login
                     </Link>
                     <a href="#contact"
                        class="block text-center px-4 py-2.5 bg-brand-600 text-white text-sm font-semibold rounded-xl hover:bg-brand-700 transition-colors">

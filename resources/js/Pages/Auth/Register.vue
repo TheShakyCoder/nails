@@ -1,9 +1,6 @@
 <script setup>
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
 const form = useForm({
@@ -21,93 +18,121 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
+    <GuestLayout title="Create an account" subtitle="Register for access to the WACA portal">
         <Head title="Register" />
 
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="name" value="Name" />
+        <form @submit.prevent="submit" class="space-y-5">
 
-                <TextInput
+            <!-- Full name -->
+            <div>
+                <label for="name" class="block text-xs font-semibold text-warm-700 mb-1.5">
+                    Full name
+                </label>
+                <input
                     id="name"
-                    type="text"
-                    class="mt-1 block w-full"
                     v-model="form.name"
+                    type="text"
                     required
                     autofocus
                     autocomplete="name"
+                    placeholder="Jane Smith"
+                    class="w-full px-4 py-2.5 text-sm border rounded-xl transition
+                           focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent
+                           placeholder-warm-300 text-warm-900"
+                    :class="form.errors.name ? 'border-rose-400 bg-rose-50' : 'border-warm-200 bg-white'"
                 />
-
-                <InputError class="mt-2" :message="form.errors.name" />
+                <InputError class="mt-1.5" :message="form.errors.name" />
             </div>
 
-            <div class="mt-4">
-                <InputLabel for="email" value="Email" />
-
-                <TextInput
+            <!-- Email -->
+            <div>
+                <label for="email" class="block text-xs font-semibold text-warm-700 mb-1.5">
+                    Email address
+                </label>
+                <input
                     id="email"
-                    type="email"
-                    class="mt-1 block w-full"
                     v-model="form.email"
+                    type="email"
                     required
                     autocomplete="username"
+                    placeholder="you@example.com"
+                    class="w-full px-4 py-2.5 text-sm border rounded-xl transition
+                           focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent
+                           placeholder-warm-300 text-warm-900"
+                    :class="form.errors.email ? 'border-rose-400 bg-rose-50' : 'border-warm-200 bg-white'"
                 />
-
-                <InputError class="mt-2" :message="form.errors.email" />
+                <InputError class="mt-1.5" :message="form.errors.email" />
             </div>
 
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+            <!-- Password row — side by side on sm+ -->
+            <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                    <label for="password" class="block text-xs font-semibold text-warm-700 mb-1.5">
+                        Password
+                    </label>
+                    <input
+                        id="password"
+                        v-model="form.password"
+                        type="password"
+                        required
+                        autocomplete="new-password"
+                        placeholder="••••••••"
+                        class="w-full px-4 py-2.5 text-sm border rounded-xl transition
+                               focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent
+                               placeholder-warm-300 text-warm-900"
+                        :class="form.errors.password ? 'border-rose-400 bg-rose-50' : 'border-warm-200 bg-white'"
+                    />
+                    <InputError class="mt-1.5" :message="form.errors.password" />
+                </div>
 
-                <TextInput
-                    id="password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password"
-                    required
-                    autocomplete="new-password"
-                />
-
-                <InputError class="mt-2" :message="form.errors.password" />
+                <div>
+                    <label for="password_confirmation" class="block text-xs font-semibold text-warm-700 mb-1.5">
+                        Confirm password
+                    </label>
+                    <input
+                        id="password_confirmation"
+                        v-model="form.password_confirmation"
+                        type="password"
+                        required
+                        autocomplete="new-password"
+                        placeholder="••••••••"
+                        class="w-full px-4 py-2.5 text-sm border rounded-xl transition
+                               focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent
+                               placeholder-warm-300 text-warm-900"
+                        :class="form.errors.password_confirmation ? 'border-rose-400 bg-rose-50' : 'border-warm-200 bg-white'"
+                    />
+                    <InputError class="mt-1.5" :message="form.errors.password_confirmation" />
+                </div>
             </div>
 
-            <div class="mt-4">
-                <InputLabel
-                    for="password_confirmation"
-                    value="Confirm Password"
-                />
+            <!-- Submit -->
+            <button
+                type="submit"
+                :disabled="form.processing"
+                class="w-full py-3 bg-brand-600 text-white font-semibold rounded-xl text-sm
+                       hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2
+                       transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-2">
+                <svg v-if="form.processing" class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+                </svg>
+                {{ form.processing ? 'Creating account…' : 'Create account' }}
+            </button>
 
-                <TextInput
-                    id="password_confirmation"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password_confirmation"
-                    required
-                    autocomplete="new-password"
-                />
-
-                <InputError
-                    class="mt-2"
-                    :message="form.errors.password_confirmation"
-                />
-            </div>
-
-            <div class="mt-4 flex items-center justify-end">
-                <Link
-                    :href="route('login')"
-                    class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
-                >
-                    Already registered?
-                </Link>
-
-                <PrimaryButton
-                    class="ms-4"
-                    :class="{ 'opacity-25': form.processing }"
-                    :disabled="form.processing"
-                >
-                    Register
-                </PrimaryButton>
-            </div>
         </form>
+
+        <!-- Divider -->
+        <div class="my-6 flex items-center gap-3">
+            <div class="flex-1 h-px bg-warm-200"></div>
+            <span class="text-xs text-warm-400">already registered?</span>
+            <div class="flex-1 h-px bg-warm-200"></div>
+        </div>
+
+        <p class="text-center text-sm text-warm-500">
+            <Link :href="route('login')" class="text-brand-600 hover:text-brand-800 font-medium transition-colors">
+                Sign in to your account
+            </Link>
+        </p>
+
     </GuestLayout>
 </template>
