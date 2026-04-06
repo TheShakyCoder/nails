@@ -1,5 +1,5 @@
 <script setup>
-import { Head } from '@inertiajs/vue3';
+import { Head, usePage } from '@inertiajs/vue3';
 import FacebookFeed from '@/Components/FacebookFeed.vue';
 import Hero from '@/Pages/Home/Partials/Hero.vue';
 import Stats from '@/Pages/Home/Partials/Stats.vue';
@@ -12,25 +12,20 @@ import Contact from '@/Pages/Home/Partials/Contact.vue';
 import Header from '@/Layouts/Partials/Header.vue';
 import Footer from '@/Layouts/Partials/Footer.vue';
 
+const page = usePage();
+
 defineProps({
     canLogin: { type: Boolean },
     canRegister: { type: Boolean },
     site: { type: Object },
 });
 
-const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Events', href: '#events' },
-    { label: 'News', href: '/news-updates' },
-    { label: 'Contact', href: '#contact' },
-];
+const navLinks = page.props.site.nav_links;
 </script>
 
 <template>
 
-    <Head title="Woodvale &amp; Ainsdale Community Centre" />
+    <Head :title="site.fullname" />
 
     <div class="font-sans antialiased text-warm-800 bg-white">
 

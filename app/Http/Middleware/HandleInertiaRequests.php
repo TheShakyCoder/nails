@@ -41,6 +41,7 @@ class HandleInertiaRequests extends Middleware
                 'address' => config('site.address'),
                 'opening_times' => config('site.opening_times'),
                 'charity_number' => config('site.charity_number'),
+                'nav_links' => config('site.nav_links'),
             ],
         ];
     }
