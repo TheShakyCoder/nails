@@ -14,6 +14,13 @@ defineProps({
             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-2xl">
         </div>
 
+        <!-- Faint background logo -->
+        <div class="absolute right-[-60px] top-1/2 -translate-y-1/2 w-[520px] h-[520px] pointer-events-none select-none"
+             style="transform: translateY(-50%) rotate(15deg);">
+            <img src="/media/logo.png" alt=""
+                 class="w-full h-full object-contain opacity-20 md:opacity-30" />
+        </div>
+
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-36">
             <div class="max-w-3xl">
                 <span
