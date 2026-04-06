@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
+import FacebookFeed from '@/Components/FacebookFeed.vue';
 
 defineProps({
     canLogin: { type: Boolean },
@@ -438,6 +439,9 @@ const stats = [
                 </div>
             </div>
         </section>
+
+        <!-- ── FACEBOOK FEED ── -->
+        <FacebookFeed />
 
         <!-- ── VOLUNTEER CTA ── -->
         <section class="py-20 bg-gradient-to-r from-brand-600 to-brand-700 relative overflow-hidden">

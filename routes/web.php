@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FacebookFeedController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -10,6 +11,8 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
     ]);
 });
+
+Route::get('/api/facebook-feed', [FacebookFeedController::class, 'index'])->name('facebook.feed');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
