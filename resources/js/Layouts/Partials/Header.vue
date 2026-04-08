@@ -20,12 +20,12 @@ const mobileMenuOpen = ref(false);
                 <div class="flex h-20 items-center justify-between">
 
                     <!-- Logo -->
-                    <a href="#home" class="flex items-center gap-3 shrink-0">
+                    <a href="/" class="flex items-center gap-3 shrink-0">
                         <img src="/media/logo.png" alt="WACA Logo" class="h-14 w-auto" />
                         <div class="hidden md:block">
                             <p class="text-lg font-semibold text-brand-700 leading-tight font-display">Woodvale
                                 &amp; Ainsdale</p>
-                            <p class="text-md text-warm-500 leading-tight">Community Association</p>
+                            <p class="text-md text-accent-700 tracking-wider leading-tight">Community Association</p>
                         </div>
                     </a>
 
@@ -52,7 +52,7 @@ const mobileMenuOpen = ref(false);
                         Dashboard
                         </Link>
                         <a href="#contact"
-                            class="px-5 py-2.5 bg-brand-600 text-white text-sm font-semibold rounded-xl hover:bg-brand-700 transition-colors shadow-sm">
+                            class="px-5 py-2.5 bg-accent-700 text-white text-sm font-semibold rounded-xl hover:bg-accent-800 transition-colors shadow-sm">
                             Get Involved
                         </a>
                     </div>

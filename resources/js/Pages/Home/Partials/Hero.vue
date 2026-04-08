@@ -1,4 +1,6 @@
 <script setup>
+import PrimaryLink from '@/Components/PrimaryLink.vue';
+
 defineProps({
     site: { type: Object },
 });
@@ -18,7 +20,7 @@ defineProps({
         <div class="absolute right-[-60px] top-1/2 -translate-y-1/2 w-[520px] h-[520px] pointer-events-none select-none"
              style="transform: translateY(-50%) rotate(15deg);">
             <img src="/media/logo.png" alt=""
-                 class="w-full h-full object-contain opacity-20 md:opacity-30" />
+                class="w-full h-full object-contain opacity-20 md:opacity-30" />
         </div>
 
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-36">
@@ -46,10 +48,7 @@ defineProps({
                                 d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
-                    <a href="#contact"
-                        class="inline-flex items-center gap-2 px-7 py-3.5 bg-white/15 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/25 transition-colors border border-white/30 text-sm">
-                        Get In Touch
-                    </a>
+                    <PrimaryLink href="#contact" text="Get In Touch" />
                 </div>
             </div>
         </div>

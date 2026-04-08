@@ -33,6 +33,8 @@ export default {
                 accent: {
                     50:  '#fff7ed',
                     100: '#ffedd5',
+                    200: '#ffedd5',
+                    300: '#ffedd5',
                     400: '#fb923c',
                     500: '#f97316',
                     600: '#ea580c',

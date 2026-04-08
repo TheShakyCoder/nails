@@ -1,4 +1,8 @@
 <script setup>
+import PrimaryLink from '@/Components/PrimaryLink.vue';
+import { usePage } from '@inertiajs/vue3';
+
+const page = usePage();
 
 </script>
 
@@ -23,10 +27,7 @@
                         funded by donations, and delivered with care.
                     </p>
                     <div class="flex flex-wrap gap-3">
-                        <a href="#services"
-                            class="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-600 text-white text-sm font-semibold rounded-xl hover:bg-brand-700 transition-colors">
-                            What We Offer
-                        </a>
+                        <PrimaryLink href="#services" text="What We Offer" />
                         <a href="#contact"
                             class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-brand-200 text-brand-700 text-sm font-semibold rounded-xl hover:border-brand-400 transition-colors">
                             Contact Us
@@ -53,6 +54,14 @@
                         <p class="text-sm font-semibold text-warm-800">Est. 1993</p>
                         <p class="text-xs text-warm-500">Over 30 years of service</p>
                     </div>
+                </div>
+            </div>
+
+            <div class="w-full max-w-3xl mx-auto py-12 pt-24" tabindex="0" role="application" :aria-label="page.props.site.full_name + ' video'">
+                <div class="border border-warm-200 rounded-2xl overflow-hidden">
+                    <video class="w-full" preload="metadata" controls
+                        src="/storage/media/VID-20181207-WA0007.mp4">
+                    </video>
                 </div>
             </div>
         </div>
