@@ -1,5 +1,5 @@
 <script setup>
-
+import PrimaryLink from '@/Components/PrimaryLink.vue';
 </script>
 
 <template>
@@ -22,10 +22,7 @@
                     class="px-7 py-3.5 bg-white text-brand-700 font-semibold rounded-xl hover:bg-brand-50 transition-colors shadow-lg text-sm">
                     Become a Volunteer
                 </a>
-                <a href="#contact"
-                    class="px-7 py-3.5 bg-white/15 text-white font-semibold rounded-xl hover:bg-white/25 transition-colors border border-white/30 text-sm">
-                    Make a Donation
-                </a>
+                <PrimaryLink href="#contact">Make a Donation</PrimaryLink>
             </div>
         </div>
     </section>

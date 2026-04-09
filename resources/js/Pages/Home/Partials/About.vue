@@ -1,6 +1,6 @@
 <script setup>
 import PrimaryLink from '@/Components/PrimaryLink.vue';
-import { usePage } from '@inertiajs/vue3';
+import { Link, usePage } from '@inertiajs/vue3';
 
 const page = usePage();
 
@@ -27,11 +27,11 @@ const page = usePage();
                         funded by donations, and delivered with care.
                     </p>
                     <div class="flex flex-wrap gap-3">
-                        <PrimaryLink href="#services" text="What We Offer" />
-                        <a href="#contact"
+                        <PrimaryLink href="/services">What We Offer</PrimaryLink>
+                        <Link href="/contact"
                             class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-brand-200 text-brand-700 text-sm font-semibold rounded-xl hover:border-brand-400 transition-colors">
                             Contact Us
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

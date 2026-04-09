@@ -48,7 +48,7 @@ defineProps({
                                 d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
-                    <PrimaryLink href="#contact" text="Get In Touch" />
+                    <PrimaryLink href="/contact">Get In Touch</PrimaryLink>
                 </div>
             </div>
         </div>
