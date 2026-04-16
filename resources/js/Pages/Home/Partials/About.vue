@@ -60,7 +60,7 @@ const page = usePage();
             <div class="w-full max-w-3xl mx-auto py-12 pt-24" tabindex="0" role="application" :aria-label="page.props.site.full_name + ' video'">
                 <div class="border border-warm-200 rounded-2xl overflow-hidden">
                     <video class="w-full" preload="metadata" controls
-                        src="/storage/media/VID-20181207-WA0007.mp4">
+                        src="/media/VID-20181207-WA0007.mp4">
                     </video>
                 </div>
             </div>
