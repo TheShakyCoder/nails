@@ -43,6 +43,7 @@ async function uploadFiles(files) {
         });
         router.reload({ only: ['media'] });
     } catch (err) {
+        console.error('Upload failed:', err);
         const errors = err.response?.data?.errors?.['files.0'] ?? ['Upload failed'];
         uploadQueue.value.forEach(q => q.error = errors[0]);
     } finally {
