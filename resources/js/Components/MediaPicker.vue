@@ -31,7 +31,7 @@ watch(() => props.modelValue, v => selected.value = v);
 
 async function load(pg = 1) {
     loading.value = true;
-    const { data } = await axios.get('/admin/media', {
+    const { data } = await axios.get('/internal/media', {
         params: { page: pg, search: search.value },
         headers: { 'X-Inertia': false, Accept: 'application/json' },
     });
@@ -74,7 +74,7 @@ async function onUpload(e) {
     uploading.value = true;
     const formData = new FormData();
     files.forEach(f => formData.append('files[]', f));
-    await axios.post('/admin/media', formData);
+    await axios.post('/internal/media', formData);
     e.target.value = '';
     uploading.value = false;
     load(1);
