@@ -1,27 +1,29 @@
-# Nixpacks configuration for Laravel + Inertia/Vue on Coolify
+# Nixpacks configuration for Laravel + Inertia/Vue on Coolify.
 #
 # The PHP provider is auto-detected from composer.json and supplies
 # nginx + php-fpm as the default web runtime. We extend it here to:
-#   - Pin PHP to 8.3 (matches composer.json require "php": "^8.3")
 #   - Add Node 22 for Vite 8 asset building
-#   - Run composer install, npm ci, npm run build
-#   - Pre-cache Laravel framework files during the build phase
+#   - Run composer install, npm ci, npm run build at build time
+#   - Defer migrations + framework caching to container boot (via
+#     nixpacks-start.sh) so they have DB + real env-var access
 #
-# Migrations run at release time via the Procfile so the built image
-# stays reusable across environments.
+# IMPORTANT: a Procfile `release:` command is NOT used. Nixpacks
+# compiles Procfile release entries into build-time `RUN` steps in the
+# generated Dockerfile, which means they run before the DB container
+# is reachable. All DB/env-dependent work lives in nixpacks-start.sh
+# instead, which becomes the container's entrypoint via `[start] cmd`
+# below.
 
 providers = ["php"]
 
 [variables]
 # Document root for the PHP provider's generated nginx config.
 NIXPACKS_PHP_ROOT_DIR = "/app/public"
-# Skip Composer scripts that require a runtime key/env we don't have
-# at build time; the real key is injected via Coolify env vars.
 COMPOSER_ALLOW_SUPERUSER = "1"
 
 [phases.setup]
 # "..." preserves the PHP provider's default nixPkgs (php83, composer,
-# nginx, etc.) and appends Node 22 for Vite.
+# nginx, node, etc.) and appends Node 22 for Vite.
 nixPkgs = ["...", "nodejs_22"]
 
 [phases.install]
@@ -33,12 +35,17 @@ cmds = [
 ]
 
 [phases.build]
-# Build front-end assets, then warm Laravel's framework caches so the
-# booted container can serve requests immediately. These caches are
-# regenerated at release time (see Procfile) once runtime env vars are
-# available, but baking them in avoids a cold-start penalty.
+# Build front-end assets and make sure Laravel's runtime directories
+# exist with write permissions. We deliberately do NOT cache Laravel
+# config/routes/views at build time — those caches are env-dependent
+# and get rebuilt at container boot instead.
 cmds = [
   "npm run build",
   "mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache",
-  "chmod -R ug+rwx storage bootstrap/cache"
+  "chmod -R ug+rwx storage bootstrap/cache",
+  "chmod +x nixpacks-start.sh"
 ]
+
+[start]
+# Container entrypoint. Runs migrations + cache warmup + web server.
+cmd = "bash /app/nixpacks-start.sh"
