@@ -107,5 +107,26 @@ class DatabaseSeeder extends Seeder
             'role_id' => $editorRole->id,
             'controller_method_name' => 'internal.menu-items.destroy',
         ]);
+
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.media.index',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.media.store',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.media.show',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.media.update',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.media.destroy',
+        ]);
     }
 }
