@@ -13,8 +13,8 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-Route::get('/news-updates', [PostController::class, 'index'])->name('posts.index');
-Route::get('/news-updates/{post:slug}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/'.env('POSTS_SLUG_PREFIX'), [PostController::class, 'index'])->name('posts.index');
+Route::get('/'.env('POSTS_SLUG_PREFIX').'/{post:slug}', [PostController::class, 'show'])->name('posts.show');
 
 Route::get('/competitions', [\App\Http\Controllers\CompetitionController::class, 'index'])->name('competitions.index');
 Route::get('/competitions/{slug}', [\App\Http\Controllers\CompetitionController::class, 'show'])->name('competitions.show');
