@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Admin User',
-            'email' => 'admin@example.com',
+            'email' => 'support@fig.limited',
             'email_verified_at' => now(),
             'password' => Hash::make(env('ADMIN_PASSWORD', 'password')),
             'is_admin' => true
@@ -35,19 +35,77 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make(env('EDITOR_PASSWORD', 'password')),
         ]);
 
-        $role = Role::create([
-            'name' => 'Admin',
-            'slug' => 'admin',
+        $editorRole = Role::create([
+            'name' => 'Editor',
+            'slug' => 'editor',
         ]);
 
         Privilege::create([
-            'role_id' => $role->id,
+            'role_id' => $editorRole->id,
             'user_id' => $user->id,
         ]);
 
         Right::create([
-            'role_id' => $role->id,
+            'role_id' => $editorRole->id,
             'controller_method_name' => 'internal.posts.index',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.posts.store',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.posts.show',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.posts.update',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.posts.destroy',
+        ]);
+
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.pages.index',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.pages.store',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.pages.show',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.pages.update',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.pages.destroy',
+        ]);
+
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.menu-items.index',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.menu-items.store',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.menu-items.show',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.menu-items.update',
+        ]);
+        Right::create([
+            'role_id' => $editorRole->id,
+            'controller_method_name' => 'internal.menu-items.destroy',
         ]);
     }
 }
