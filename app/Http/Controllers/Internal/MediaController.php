@@ -75,6 +75,8 @@ class MediaController extends Controller
             }
         }
 
+        Log::info('Media upload successful for ' . count($uploaded) . ' file(s).');
+
         return response()->json([
             'media' => collect($uploaded)->map(fn($m) => [
                 'id'        => $m->id,
