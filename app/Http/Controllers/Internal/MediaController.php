@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Log;
 
 class MediaController extends Controller
 {
@@ -16,7 +17,7 @@ class MediaController extends Controller
         if ($request->user()->cannot('viewAny', Media::class)) abort(403);
 
         $media = Media::latest()
-            ->when($request->search, fn ($q, $s) => $q->where('filename', 'like', "%{$s}%"))
+            ->when($request->search, fn($q, $s) => $q->where('filename', 'like', "%{$s}%"))
             ->paginate(24);
 
         if ($request->wantsJson()) {
@@ -39,31 +40,39 @@ class MediaController extends Controller
         $uploaded = [];
 
         foreach ($request->file('files') as $file) {
-            $originalName = $file->getClientOriginalName();
-            $path = $file->storeAs(
-                'media/' . now()->format('Y/m'),
-                Str::uuid() . '.' . $file->getClientOriginalExtension(),
-                's3'
-            );
 
-            if (!$path) {
-                return response()->json(['message' => 'Failed to upload ' . $originalName . ' to storage.'], 500);
+            try {
+
+
+                $originalName = $file->getClientOriginalName();
+                $path = $file->storeAs(
+                    'media/' . now()->format('Y/m'),
+                    Str::uuid() . '.' . $file->getClientOriginalExtension(),
+                    's3'
+                );
+
+                if (!$path) {
+                    return response()->json(['message' => 'Failed to upload ' . $originalName . ' to storage.'], 500);
+                }
+
+                $media = Media::create([
+                    'filename'    => $originalName,
+                    'path'        => $path,
+                    'disk'        => 's3',
+                    'mime_type'   => $file->getMimeType(),
+                    'size'        => $file->getSize(),
+                    'uploaded_by' => $request->user()->id,
+                ]);
+
+                $uploaded[] = $media->fresh();
+            } catch (\Exception $e) {
+                Log::error('Media upload failed for file ' . $file->getClientOriginalName() . ': ' . $e->getMessage());
+                return response()->json(['message' => 'Failed to upload ' . $file->getClientOriginalName() . ': ' . $e->getMessage()], 500);
             }
-
-            $media = Media::create([
-                'filename'    => $originalName,
-                'path'        => $path,
-                'disk'        => 's3',
-                'mime_type'   => $file->getMimeType(),
-                'size'        => $file->getSize(),
-                'uploaded_by' => $request->user()->id,
-            ]);
-
-            $uploaded[] = $media->fresh();
         }
 
         return response()->json([
-            'media' => collect($uploaded)->map(fn ($m) => [
+            'media' => collect($uploaded)->map(fn($m) => [
                 'id'        => $m->id,
                 'filename'  => $m->filename,
                 'url'       => $m->url,
