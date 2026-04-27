@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Media extends Model
@@ -18,7 +17,16 @@ class Media extends Model
     public function url(): Attribute
     {
         return Attribute::make(
-            get: fn () => Storage::disk($this->disk)->url($this->path),
+            get: function () {
+                $config  = config('filesystems.disks.s3', []);
+                $baseUrl = rtrim($config['url'] ?? '', '/');
+
+                if (! $baseUrl && isset($config['endpoint'], $config['bucket'])) {
+                    $baseUrl = rtrim($config['endpoint'], '/') . '/' . $config['bucket'];
+                }
+
+                return $baseUrl . '/' . ltrim($this->path, '/');
+            },
         );
     }
 
