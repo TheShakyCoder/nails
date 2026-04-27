@@ -128,5 +128,9 @@ class DatabaseSeeder extends Seeder
             'role_id' => $editorRole->id,
             'controller_method_name' => 'internal.media.destroy',
         ]);
+
+        $this->call([
+            MenuItemSeeder::class,
+        ]);
     }
 }
