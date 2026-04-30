@@ -16,5 +16,7 @@ return [
         ['label' => 'Events', 'href' => '#events'],
         ['label' => 'News', 'href' => '/news-updates'],
         ['label' => 'Contact', 'href' => '#contact'],
-    ]
+    ],
+
+    'robots_allowed' => env('ROBOTS_ALLOWED', false),
 ];
