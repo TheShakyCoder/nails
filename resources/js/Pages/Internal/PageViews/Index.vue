@@ -121,7 +121,7 @@ function formatDate(d) {
                             <td class="px-4 py-3 whitespace-nowrap">
                                 <span
                                     :class="{
-                                        'text-green-600': view.status_code >= 200 && view.status_code < 300,
+                                        'text-emerald-500': view.status_code >= 200 && view.status_code < 300,
                                         'text-yellow-600': view.status_code >= 300 && view.status_code < 400,
                                         'text-red-600': view.status_code >= 400,
                                     }"

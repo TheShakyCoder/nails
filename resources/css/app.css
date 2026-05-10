@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    /* Smooth scrolling for anchor links */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Refined selection colors */
+    ::selection {
+        background-color: #e9d5ff;
+        color: #581c87;
+    }
+
+    /* Subtle body background */
+    body {
+        background-color: #faf9fb;
+    }
+}

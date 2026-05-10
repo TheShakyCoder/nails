@@ -27,7 +27,7 @@ const navLinks = page.props.site.nav_links;
 
     <Head :title="site.fullname" />
 
-    <div class="font-sans antialiased text-warm-800 bg-white">
+    <div class="font-sans antialiased text-warm-700 bg-white">
 
         <Header :navLinks="navLinks" :canLogin="canLogin" :canRegister="canRegister" />
 

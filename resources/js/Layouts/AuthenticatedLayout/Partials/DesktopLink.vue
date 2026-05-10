@@ -10,11 +10,11 @@ defineProps({
 <template>
     <Link
         :href="route(href)"
-        class="px-3 py-2 text-sm font-medium rounded-lg transition-colors"
+        class="px-3 py-2 text-sm font-medium rounded-full transition-all duration-200"
         :class="
             route().current(href)
-                ? 'bg-brand-50 text-brand-700'
-                : 'text-warm-600 hover:bg-warm-100 hover:text-warm-900'
+                ? 'bg-brand-50 text-brand-600'
+                : 'text-warm-500 hover:bg-brand-50 hover:text-brand-600'
         "
     >
         {{ title }}

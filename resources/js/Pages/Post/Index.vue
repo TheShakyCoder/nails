@@ -29,7 +29,7 @@ function tagColour(index) {
 </script>
 
 <template>
-    <Head title="News &amp; Updates — Woodvale &amp; Ainsdale Community Centre" />
+    <Head title="News &amp; Updates — Cici Nails &amp; Spa" />
 
     <div class="font-sans antialiased text-warm-800 bg-white">
 
@@ -61,7 +61,7 @@ function tagColour(index) {
                     News &amp; Updates
                 </h1>
                 <p class="text-white/75 text-lg max-w-xl leading-relaxed">
-                    The latest stories, announcements, and news from the heart of Woodvale &amp; Ainsdale.
+                    The latest stories, announcements, and news from the Cici Nails &amp; Spa team.
                 </p>
             </div>
 

@@ -52,7 +52,7 @@ function formatDate(d) {
 }
 
 const eventColors = {
-    created: 'bg-green-100 text-green-700',
+    created: 'bg-brand-100 text-brand-600',
     updated: 'bg-blue-100 text-blue-700',
     deleted: 'bg-red-100 text-red-700',
 };
@@ -132,7 +132,7 @@ const eventColors = {
                             </td>
                             <td class="px-4 py-3 text-gray-700 whitespace-nowrap font-mono text-xs">{{ c.field ?? '—' }}</td>
                             <td class="px-4 py-3 text-red-700 max-w-xs truncate" :title="c.old_value">{{ truncate(c.old_value) }}</td>
-                            <td class="px-4 py-3 text-green-700 max-w-xs truncate" :title="c.new_value">{{ truncate(c.new_value) }}</td>
+                            <td class="px-4 py-3 text-brand-600 max-w-xs truncate" :title="c.new_value">{{ truncate(c.new_value) }}</td>
                             <td class="px-4 py-3 text-gray-500 whitespace-nowrap">{{ c.user?.name ?? '—' }}</td>
                             <td class="px-4 py-3 text-gray-500 whitespace-nowrap">{{ formatDate(c.changed_at) }}</td>
                         </tr>

@@ -19,7 +19,7 @@ watch(search, (val) => {
 });
 
 const statusBadge = {
-    active:   'bg-green-100 text-green-700',
+    active:   'bg-brand-100 text-brand-600',
     inactive: 'bg-gray-100 text-gray-500',
 };
 </script>

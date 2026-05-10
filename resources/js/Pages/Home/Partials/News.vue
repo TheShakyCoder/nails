@@ -3,65 +3,63 @@ import { Link } from '@inertiajs/vue3';
 
 const news = [
     {
-        date: '1 Apr 2026',
-        title: 'New sensory garden officially opens',
-        excerpt: 'Thanks to a generous grant and the hard work of our volunteers, the new sensory garden is now open for everyone to enjoy.',
-        tag: 'Facilities',
-        tagColor: 'bg-brand-100 text-brand-700',
+        date: '5 May 2026',
+        title: 'Summer nail trends you need to try',
+        excerpt: 'From lavender glazed donuts to soft chrome finishes, discover the top nail trends that will define your summer style.',
+        tag: 'Trends',
+        tagColor: 'bg-brand-100 text-brand-600',
     },
     {
-        date: '22 Mar 2026',
-        title: 'Foodbank donations up 40% this quarter',
-        excerpt: 'The Woodvale community has shown incredible generosity — over 400 families received support through our foodbank this quarter.',
-        tag: 'Support',
-        tagColor: 'bg-rose-100 text-rose-700',
+        date: '28 Apr 2026',
+        title: 'New luxury product line now available',
+        excerpt: 'We\'re thrilled to introduce our new range of vegan, cruelty-free nail and skin care products — available in-store and online.',
+        tag: 'Products',
+        tagColor: 'bg-accent-100 text-accent-500',
     },
     {
-        date: '14 Mar 2026',
-        title: 'Youth football team wins regional cup',
-        excerpt: 'Huge congratulations to our Under-14s who brought home the Sefton Community Cup for the first time in 12 years!',
-        tag: 'Youth',
-        tagColor: 'bg-purple-100 text-purple-700',
+        date: '15 Apr 2026',
+        title: 'Cici named Best Nail Salon 2026',
+        excerpt: 'We\'re honoured to be voted the region\'s favourite nail salon for the third consecutive year. Thank you to all our clients!',
+        tag: 'News',
+        tagColor: 'bg-purple-100 text-purple-600',
     },
 ];
 </script>
 
 <template>
-    <section id="news" class="py-20 bg-white">
+    <section id="news" class="py-28 bg-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex items-end justify-between mb-14">
+            <div class="flex items-end justify-between mb-16">
                 <div>
-                    <span class="text-xs font-semibold uppercase tracking-widest text-brand-600 mb-3 block">Latest
-                        News</span>
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-warm-900">
-                        From the centre
+                    <span class="text-xs font-semibold uppercase tracking-[0.25em] text-brand-400 mb-4 block">From the Blog</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-warm-800">
+                        Beauty inspiration
                     </h2>
                 </div>
                 <Link href="/news-updates"
-                    class="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-brand-600 hover:text-brand-800 transition-colors">
-                    All news
+                    class="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-brand-400 hover:text-brand-600 transition-colors">
+                    All posts
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
                     </svg>
                 </Link>
             </div>
 
             <div class="grid md:grid-cols-3 gap-7">
                 <article v-for="item in news" :key="item.title"
-                    class="group border border-warm-200 rounded-2xl p-6 hover:border-brand-300 hover:shadow-md transition-all cursor-pointer">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="px-2.5 py-1 rounded-full text-xs font-semibold" :class="item.tagColor">{{ item.tag
-                            }}</span>
-                        <time class="text-xs text-warm-400">{{ item.date }}</time>
+                    class="group border border-brand-100/40 rounded-3xl p-7 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-100/15 transition-all duration-300 cursor-pointer bg-gradient-to-br from-white to-brand-50/10">
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold" :class="item.tagColor">{{ item.tag }}</span>
+                        <time class="text-xs text-warm-300">{{ item.date }}</time>
                     </div>
                     <h3
-                        class="font-semibold text-warm-900 mb-3 leading-snug group-hover:text-brand-700 transition-colors">
+                        class="font-semibold text-warm-700 mb-3 leading-snug group-hover:text-brand-500 transition-colors duration-200">
                         {{ item.title }}
                     </h3>
-                    <p class="text-sm text-warm-500 leading-relaxed">{{ item.excerpt }}</p>
-                    <div class="mt-4 flex items-center gap-1 text-xs font-medium text-brand-600">
+                    <p class="text-sm text-warm-400 leading-relaxed font-light">{{ item.excerpt }}</p>
+                    <div class="mt-5 flex items-center gap-1 text-xs font-medium text-brand-400">
                         Read more
-                        <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none"
+                        <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>

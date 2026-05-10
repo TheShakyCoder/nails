@@ -8,7 +8,7 @@ defineProps({
 
 <template>
     <Link :href="href"
-        class="inline-flex items-center gap-2 px-5 py-2.5 bg-accent-600 text-white text-sm font-semibold rounded-xl hover:bg-accent-700 transition-colors">
+        class="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-brand-400 to-accent-300 text-white text-sm font-semibold rounded-full hover:shadow-lg hover:shadow-brand-200/40 transition-all duration-300">
         <slot />
     </Link>
 </template>
