@@ -86,7 +86,7 @@ const recentActivity = [
         <!-- Quick actions -->
         <div v-if="indexLinks.length" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
             <a v-for="link in indexLinks" :key="link.href" :href="link.href"
-               class="flex items-center gap-3 px-4 py-3 bg-white border border-brand-100/50 rounded-2xl text-sm font-medium text-warm-600 hover:border-brand-200 hover:bg-brand-50 hover:text-brand-600 transition-all duration-200 shadow-sm"
+               class="flex items-center gap-3 px-4 py-3 bg-white border border-brand-100/50 rounded-2xl text-sm font-medium text-warm-600 hover:border-brand-200 hover:bg-brand-50 hover:text-brand-600 transition-all duration-200 shadow-sm">
                 <span class="text-base">{{ link.icon }}</span>
                 {{ link.label }}
             </a>
