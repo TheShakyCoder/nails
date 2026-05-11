@@ -19,8 +19,9 @@ RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist --ignor
 COPY package.json package-lock.json ./
 RUN npm ci
 
-# Copy everything and build
+# Copy everything, generate autoloader so Ziggy resolves, then build
 COPY . .
+RUN composer dump-autoload --optimize --no-dev
 RUN npm run build
 
 
