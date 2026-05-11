@@ -6,19 +6,33 @@ defineProps({
 
 <template>
     <section id="home"
-        class="relative overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white text-warm-800 min-h-[92vh] flex items-center">
+        class="relative overflow-hidden text-warm-800 min-h-[92vh] flex items-center">
+
+        <!-- Background image -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/media/nails.jpg');"></div>
+
+        <!-- Overlay — soft gradient to keep text readable -->
+        <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90"></div>
 
         <!-- Ambient light — large, quiet, layered -->
         <div class="absolute -top-40 -right-40 w-[900px] h-[900px] bg-brand-100/40 rounded-full blur-[180px]"></div>
         <div class="absolute -bottom-60 -left-40 w-[700px] h-[700px] bg-accent-100/30 rounded-full blur-[160px]"></div>
         <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/70 rounded-full blur-[120px]"></div>
 
-        <!-- Floating petals — fewer, softer, more spaced -->
-        <div class="absolute top-[8%] right-[18%] w-20 h-20 bg-brand-200/35 rounded-full animate-float blur-[6px]"></div>
-        <div class="absolute top-[55%] left-[8%] w-32 h-32 bg-brand-200/25 rounded-full animate-float-slow blur-[8px]"></div>
-        <div class="absolute bottom-[25%] right-[12%] w-14 h-14 bg-accent-200/30 rounded-full animate-float-delayed blur-[4px]"></div>
-        <div class="absolute top-[30%] left-[25%] w-6 h-6 bg-brand-300/30 rounded-full animate-float blur-[2px]"></div>
-        <div class="absolute top-[70%] right-[40%] w-10 h-10 bg-pink-200/25 rounded-full animate-float-slow blur-[3px]"></div>
+        <!-- Floating petals — animated, layered -->
+        <div class="absolute top-10 right-[22%] w-24 h-24 bg-brand-300/40 rounded-full animate-float blur-[3px]"></div>
+        <div class="absolute top-24 right-[10%] w-10 h-10 bg-accent-300/35 rounded-full animate-float-slow blur-[2px]"></div>
+        <div class="absolute bottom-32 left-[16%] w-40 h-40 bg-brand-200/30 rounded-full animate-float-delayed blur-[5px]"></div>
+        <div class="absolute top-[50%] right-[36%] w-16 h-16 bg-pink-300/35 rounded-full animate-float-slow blur-[3px]"></div>
+        <div class="absolute top-[28%] left-[6%] w-12 h-12 bg-purple-300/30 rounded-full animate-float blur-[2px]"></div>
+        <div class="absolute bottom-[52%] right-[68%] w-32 h-32 bg-brand-400/25 rounded-full animate-float-delayed blur-[4px]"></div>
+        <div class="absolute top-[72%] left-[32%] w-8 h-8 bg-accent-200/40 rounded-full animate-float-slow blur-[1px]"></div>
+        <div class="absolute top-[12%] left-[38%] w-5 h-5 bg-pink-200/35 rounded-full animate-float"></div>
+        <div class="absolute top-[42%] right-[22%] w-20 h-20 bg-violet-300/30 rounded-full animate-float-delayed blur-[3px]"></div>
+        <div class="absolute top-[18%] right-[32%] w-36 h-36 bg-brand-200/25 rounded-full animate-float-slow blur-[5px]"></div>
+        <div class="absolute bottom-[40%] left-[28%] w-6 h-6 bg-purple-200/35 rounded-full animate-float"></div>
+        <div class="absolute top-[65%] right-[15%] w-28 h-28 bg-accent-300/25 rounded-full animate-float-delayed blur-[4px]"></div>
+        <div class="absolute bottom-[15%] left-[45%] w-14 h-14 bg-pink-300/30 rounded-full animate-float blur-[2px]"></div>
 
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32 lg:py-40 w-full">
             <div class="max-w-3xl mx-auto text-center">
