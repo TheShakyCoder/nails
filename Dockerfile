@@ -21,7 +21,7 @@ RUN npm ci
 
 # Copy everything, generate autoloader so Ziggy resolves, then build
 COPY . .
-RUN composer dump-autoload --optimize --no-dev
+RUN composer dump-autoload --optimize --no-dev --ignore-platform-reqs
 RUN npm run build
 
 
