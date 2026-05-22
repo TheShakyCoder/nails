@@ -15,7 +15,7 @@ class VerifyEmailNotification extends VerifyEmail
         $verificationUrl = $this->verificationUrl($notifiable);
 
         return (new MailMessage)
-            ->subject('Please verify your email — Woodvale & Ainsdale Community Centre')
+            ->subject('Please verify your email — Acme Nails and Spa')
             ->view('emails.verify-email', [
                 'user'            => $notifiable,
                 'verificationUrl' => $verificationUrl,

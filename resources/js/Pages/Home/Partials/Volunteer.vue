@@ -19,7 +19,7 @@
                 Give the gift of glow
             </h2>
             <p class="text-white/70 text-lg max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-                Treat someone special to a Cici gift card. Available in any amount, redeemable
+                Treat someone special to a Acme gift card. Available in any amount, redeemable
                 for all treatments and products. Because everyone deserves a little luxury.
             </p>
             <div class="flex flex-wrap justify-center gap-4">

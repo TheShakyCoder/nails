@@ -32,15 +32,15 @@
 
                             <!-- Logo -->
                             <img src="{{ config('app.url') }}/media/logo.png"
-                                 alt="Woodvale &amp; Ainsdale Community Centre"
+                                 alt="Acme Nails and Spa"
                                  width="80" height="80"
                                  style="width:80px;height:80px;object-fit:contain;border-radius:50%;background-color:rgba(255,255,255,0.15);padding:6px;display:block;margin:0 auto 16px;" />
 
                             <p style="margin:0 0 4px;font-size:18px;font-weight:700;color:#ffffff;letter-spacing:-0.3px;">
-                                Woodvale &amp; Ainsdale
+                                Acme
                             </p>
                             <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.65);font-weight:400;">
-                                Community Centre
+                                Nails and Spa
                             </p>
                         </td>
                     </tr>
@@ -54,7 +54,7 @@
                                 Hi {{ $user->name }},
                             </p>
                             <p style="margin:0 0 28px;font-size:15px;color:#78716c;line-height:1.6;">
-                                Thanks for joining the WACA community. Before you get started,
+                                Thanks for joining the Acme community. Before you get started,
                                 we just need to confirm this is your email address.
                             </p>
 
@@ -98,7 +98,7 @@
 
                             <!-- Didn't request notice -->
                             <p style="margin:0;font-size:13px;color:#a8a29e;line-height:1.6;">
-                                If you didn't create an account with Woodvale &amp; Ainsdale Community Centre,
+                                If you didn't create an account with Acme Nails and Spa,
                                 you can safely ignore this email — no account will be activated.
                             </p>
 
@@ -137,7 +137,7 @@
                                             {{ config('app.fullname') }}
                                         </p>
                                         <p style="margin:0 0 12px;font-size:12px;color:rgba(255,255,255,0.45);">
-                                            Woodvale Road, Ainsdale, Southport PR8 3NX
+                                            {{ config('site.address') }}
                                         </p>
                                         <p style="margin:0 0 16px;font-size:11px;color:rgba(255,255,255,0.3);">
                                             Registered Charity No. 1234567

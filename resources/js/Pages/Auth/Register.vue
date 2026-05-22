@@ -18,7 +18,7 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout title="Create an account" subtitle="Create your Cici account">
+    <GuestLayout title="Create an account" subtitle="Create your Acme account">
         <Head title="Register" />
 
         <form @submit.prevent="submit" class="space-y-5">

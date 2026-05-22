@@ -59,14 +59,14 @@ onMounted(() => {
                         >
                             <img
                                 src="/media/logo.png"
-                                alt="Cici"
+                                alt="Acme"
                                 class="h-10 w-auto"
                             />
                             <div class="hidden sm:block">
                                 <p
                                     class="text-sm font-display text-brand-700 leading-tight tracking-wide"
                                 >
-                                    Cici
+                                    Acme
                                 </p>
                                 <p class="text-xs text-warm-400 leading-tight font-light">
                                     {{ title }}

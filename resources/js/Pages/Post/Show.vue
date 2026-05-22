@@ -20,7 +20,7 @@ function formatDate(iso) {
 
 <template>
     <Head 
-        :title="`${post.title} — Cici Nails &amp; Spa`" 
+        :title="`${post.title} — Acme Nails and Spa`"
         :description="post.description"
         />
 

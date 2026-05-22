@@ -15,7 +15,7 @@ const page = usePage();
                         Your sanctuary for<br />nail art &amp; self-care
                     </h2>
                     <p class="text-warm-400 leading-relaxed mb-4 font-light">
-                        At Cici Nails &amp; Spa, we believe beauty is more than skin deep. Our tranquil studio
+                        At Acme Nails and Spa, we believe beauty is more than skin deep. Our tranquil studio
                         is designed to be your escape — a place where you can unwind, be pampered,
                         and leave feeling radiant from the inside out.
                     </p>

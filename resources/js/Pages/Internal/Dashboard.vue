@@ -61,7 +61,7 @@ const recentActivity = [
 </script>
 
 <template>
-    <Head title="Dashboard — Cici Admin" />
+    <Head title="Dashboard — Acme Admin" />
 
     <AuthenticatedLayout title="Internal Dashboard">
         <template #header>
@@ -138,10 +138,10 @@ const recentActivity = [
                 <!-- Charity info card -->
                 <div class="bg-gradient-to-br from-brand-400 to-brand-500 rounded-2xl p-5 text-white">
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="/media/logo.png" alt="Cici" class="h-12 w-auto brightness-0 invert opacity-90" />
+                        <img src="/media/logo.png" alt="Acme" class="h-12 w-auto brightness-0 invert opacity-90" />
                         <div>
-                            <p class="font-display text-lg text-white leading-tight tracking-wide">Cici</p>
-                            <p class="text-white/50 text-xs tracking-[0.2em] uppercase">Nails &amp; Spa</p>
+                            <p class="font-display text-lg text-white leading-tight tracking-wide">Acme</p>
+                            <p class="text-white/50 text-xs tracking-[0.2em] uppercase">Nails and Spa</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-3 text-center">

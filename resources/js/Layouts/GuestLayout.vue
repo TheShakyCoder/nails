@@ -34,10 +34,10 @@ defineProps({
             <!-- Centre content -->
             <div class="relative flex-1 flex flex-col justify-center px-10 xl:px-14">
                 <Link href="/" class="flex items-center gap-4 mb-10">
-                    <img src="/media/logo.png" alt="Cici Nails & Spa" class="h-16 w-auto brightness-0 invert opacity-90" />
+                    <img src="/media/logo.png" alt="Acme Nails and Spa" class="h-16 w-auto brightness-0 invert opacity-90" />
                     <div>
-                        <p class="font-display text-2xl text-white leading-tight tracking-wide">Cici</p>
-                        <p class="text-white/50 text-xs tracking-[0.25em] uppercase">Nails &amp; Spa</p>
+                        <p class="font-display text-2xl text-white leading-tight tracking-wide">Acme</p>
+                        <p class="text-white/50 text-xs tracking-[0.25em] uppercase">Nails and Spa</p>
                     </div>
                 </Link>
 
@@ -68,7 +68,7 @@ defineProps({
 
             <!-- Footer -->
             <div class="relative px-10 pb-10">
-                <p class="text-white/30 text-xs font-light">&copy; {{ new Date().getFullYear() }} Cici Nails &amp; Spa. All rights reserved.</p>
+                <p class="text-white/30 text-xs font-light">&copy; {{ new Date().getFullYear() }} Acme Nails and Spa. All rights reserved.</p>
             </div>
         </div>
 
@@ -78,10 +78,10 @@ defineProps({
             <!-- Mobile header -->
             <div class="lg:hidden flex items-center justify-between px-6 pt-6 pb-4">
                 <Link href="/" class="flex items-center gap-3">
-                    <img src="/media/logo.png" alt="Cici Nails & Spa" class="h-10 w-auto" />
+                    <img src="/media/logo.png" alt="Acme Nails and Spa" class="h-10 w-auto" />
                     <div>
-                        <p class="font-display text-brand-700 text-lg leading-tight tracking-wide">Cici</p>
-                        <p class="text-accent-400 text-xs tracking-[0.2em] uppercase font-light">Nails &amp; Spa</p>
+                        <p class="font-display text-brand-700 text-lg leading-tight tracking-wide">Acme</p>
+                        <p class="text-accent-400 text-xs tracking-[0.2em] uppercase font-light">Nails and Spa</p>
                     </div>
                 </Link>
                 <Link href="/" class="text-xs text-warm-400 hover:text-brand-500 transition-colors font-medium">

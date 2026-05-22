@@ -18,7 +18,7 @@ const news = [
     },
     {
         date: '15 Apr 2026',
-        title: 'Cici named Best Nail Salon 2026',
+        title: 'Acme named Best Nail Salon 2026',
         excerpt: 'We\'re honoured to be voted the region\'s favourite nail salon for the third consecutive year. Thank you to all our clients!',
         tag: 'News',
         tagColor: 'bg-purple-100 text-purple-600',

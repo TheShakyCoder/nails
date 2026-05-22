@@ -37,10 +37,10 @@ onUnmounted(() => {
 
                     <!-- Logo -->
                     <a href="/" class="flex items-center gap-3 shrink-0">
-                        <img src="/media/logo.png" alt="Cici Nails & Spa" class="h-14 w-auto" />
+                        <img src="/media/logo.png" alt="Acme Nails and Spa" class="h-14 w-auto" />
                         <div class="hidden md:block">
-                            <p class="text-xl font-display text-brand-700 leading-tight tracking-wide">Cici</p>
-                            <p class="text-xs text-accent-400 tracking-[0.25em] uppercase font-light">Nails &amp; Spa</p>
+                            <p class="text-xl font-display text-brand-700 leading-tight tracking-wide">Acme</p>
+                            <p class="text-xs text-accent-400 tracking-[0.25em] uppercase font-light">Nails and Spa</p>
                         </div>
                     </a>
 

@@ -14,10 +14,10 @@ const page = usePage();
             <div class="grid md:grid-cols-4 gap-10 mb-12">
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-5">
-                        <img src="/media/logo.png" alt="Cici Nails & Spa" class="h-14 w-auto" />
+                        <img src="/media/logo.png" alt="Acme Nails and Spa" class="h-14 w-auto" />
                         <div>
-                            <p class="font-display text-xl text-brand-700 tracking-wide">Cici</p>
-                            <p class="text-xs text-accent-400 tracking-[0.25em] uppercase font-light">Nails &amp; Spa</p>
+                            <p class="font-display text-xl text-brand-700 tracking-wide">Acme</p>
+                            <p class="text-xs text-accent-400 tracking-[0.25em] uppercase font-light">Nails and Spa</p>
                         </div>
                     </div>
                     <p class="text-warm-400 text-sm leading-relaxed max-w-xs font-light">
@@ -63,7 +63,7 @@ const page = usePage();
 
             <div
                 class="pt-8 border-t border-brand-100/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-warm-300">
-                <p>&copy; Cici Nails &amp; Spa {{ new Date().getFullYear() }}. All rights reserved.</p>
+                <p>&copy; Acme Nails and Spa {{ new Date().getFullYear() }}. All rights reserved.</p>
                 <div class="flex gap-5">
                     <a href="#" class="hover:text-brand-500 transition-colors duration-200">Privacy Policy</a>
                     <a href="#" class="hover:text-brand-500 transition-colors duration-200">Terms of Service</a>
