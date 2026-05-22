@@ -30,14 +30,19 @@ FROM php:8.4-fpm AS runtime
 
 # System deps + PHP extensions
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        nginx supervisor curl unzip git \
+        nginx supervisor curl ca-certificates gnupg unzip git \
         libicu-dev libzip-dev libpng-dev libjpeg-dev libfreetype6-dev \
         libssl-dev libonig-dev \
-        nodejs npm \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) \
         pcntl opcache pdo pdo_mysql intl zip gd exif bcmath mbstring \
     && pecl install redis && docker-php-ext-enable redis \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Node 22 for Inertia SSR runtime — match the build stage (Debian's nodejs is
+# Node 18, too old to reliably run a bundle produced by Vite under Node 22).
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+    && apt-get install -y --no-install-recommends nodejs \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # PHP production config
@@ -63,6 +68,11 @@ COPY . .
 # Copy compiled frontend assets from stage 1
 COPY --from=build-assets /app/public/build /var/www/html/public/build
 COPY --from=build-assets /app/bootstrap/ssr /var/www/html/bootstrap/ssr
+
+# node_modules is required at runtime — Vite externalises npm deps in the SSR
+# bundle, so `node ssr.mjs` resolves imports (vue, @inertiajs/vue3, etc.) from
+# node_modules walking up from bootstrap/ssr/.
+COPY --from=build-assets /app/node_modules /var/www/html/node_modules
 
 # Install PHP production deps
 RUN composer install --prefer-dist --optimize-autoloader --no-dev --no-interaction

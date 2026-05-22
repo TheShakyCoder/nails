@@ -7,7 +7,8 @@
       "Bash(python3 -c \"from PIL import Image, ImageDraw, ImageFont; print\\('PIL ok'\\)\")",
       "Bash(magick -background white -density 200 /tmp/logo-generic.svg -resize 960x960 /Users/sharifkhan/Customers/nails/public/media/logo.png)",
       "Bash(magick -list font)",
-      "Bash(magick -background white -size 960x960 xc:white -fill none -stroke '#a16f4e' -strokewidth 12 -draw 'circle 480,480 480,120' -fill none -stroke '#c89373' -strokewidth 4 -draw 'circle 480,480 480,160' -font /System/Library/Fonts/Supplemental/Georgia.ttf -pointsize 360 -fill '#8a5a3d' -gravity center -annotate +0-40 A -font /System/Library/Fonts/Supplemental/Georgia.ttf -pointsize 48 -fill '#a16f4e' -kerning 14 -annotate +0+140 'NAILS & SPA' /Users/sharifkhan/Customers/nails/public/media/logo.png)"
+      "Bash(magick -background white -size 960x960 xc:white -fill none -stroke '#a16f4e' -strokewidth 12 -draw 'circle 480,480 480,120' -fill none -stroke '#c89373' -strokewidth 4 -draw 'circle 480,480 480,160' -font /System/Library/Fonts/Supplemental/Georgia.ttf -pointsize 360 -fill '#8a5a3d' -gravity center -annotate +0-40 A -font /System/Library/Fonts/Supplemental/Georgia.ttf -pointsize 48 -fill '#a16f4e' -kerning 14 -annotate +0+140 'NAILS & SPA' /Users/sharifkhan/Customers/nails/public/media/logo.png)",
+      "Bash(npx vite *)"
     ]
   }
 }
