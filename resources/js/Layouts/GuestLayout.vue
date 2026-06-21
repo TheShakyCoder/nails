@@ -14,7 +14,7 @@ defineProps({
         <div class="hidden lg:flex lg:w-1/2 xl:w-5/12 flex-col relative overflow-hidden">
 
             <!-- Gradient background -->
-            <div class="absolute inset-0 bg-gradient-to-br from-brand-400 via-brand-500 to-purple-500"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-brand-600 via-brand-700 to-purple-700"></div>
 
             <!-- Soft decorative orbs -->
             <div class="absolute -top-20 -left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -55,10 +55,10 @@ defineProps({
                         { text: 'Browse our treatment menu' },
                         { text: 'Earn loyalty rewards' },
                         { text: 'Exclusive member offers' },
-                    ]" :key="item.text" class="flex items-center gap-3 text-white/70 text-sm font-light">
-                        <span class="w-8 h-8 bg-white/10 rounded-xl flex items-center justify-center shrink-0">
-                            <svg class="w-4 h-4 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/>
+                    ]" :key="item.text" class="flex items-center gap-3 text-white text-sm font-medium">
+                        <span class="w-8 h-8 bg-white/20 rounded-xl flex items-center justify-center shrink-0">
+                            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
                         </span>
                         {{ item.text }}
