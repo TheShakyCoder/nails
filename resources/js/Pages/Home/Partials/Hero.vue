@@ -45,9 +45,9 @@ defineProps({
                 </span>
 
                 <!-- Headline — larger, more breathing room -->
-                <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] mb-6 text-warm-800 tracking-tight">
-                    Where Beauty<br class="hidden sm:block" />
-                    <span class="bg-gradient-to-r from-brand-400 via-brand-500 to-accent-400 bg-clip-text text-transparent">Meets Serenity</span>
+                <h1 class="font-soft text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.15] mb-6 text-warm-500 tracking-tight">
+                    where beauty<br class="hidden sm:block" />
+                    <span class="italic font-bold bg-gradient-to-r from-brand-300 via-brand-400 to-accent-300 bg-clip-text text-transparent pr-2 -mr-2">meets serenity</span>
                 </h1>
 
                 <!-- Subheading — refined, concise -->

@@ -16,6 +16,7 @@ export default {
             fontFamily: {
                 sans: ['Quicksand', ...defaultTheme.fontFamily.sans],
                 display: ['Playfair Display', ...defaultTheme.fontFamily.sans],
+                soft: ['Nunito', 'Quicksand', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 brand: {
