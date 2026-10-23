@@ -3,12 +3,19 @@
 # =============================================================================
 
 # ── Stage 1: Build frontend assets ──────────────────────────────────────────
-FROM node:22-slim AS build-assets
+# PHP 8.4 base (Debian's php-cli is 8.2, too old for Symfony 8 / Laravel 13),
+# with Node 22 copied in from the official image.
+FROM php:8.4-cli AS build-assets
 WORKDIR /app
+
+COPY --from=node:22-slim /usr/local/bin/node /usr/local/bin/node
+COPY --from=node:22-slim /usr/local/lib/node_modules /usr/local/lib/node_modules
+RUN ln -s ../lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \
+    && ln -s ../lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
 
 # Composer is needed so Vite can resolve Ziggy routes
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
-RUN apt-get update && apt-get install -y --no-install-recommends php-cli php-xml php-curl unzip \
+RUN apt-get update && apt-get install -y --no-install-recommends unzip \
     && rm -rf /var/lib/apt/lists/*
 
 # Install PHP deps first (layer cache)
